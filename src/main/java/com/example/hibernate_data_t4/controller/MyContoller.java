@@ -12,13 +12,15 @@ import java.util.List;
 @RestController
 @RequestMapping
 public class MyContoller {
+
     private final Service service;
 
     public MyContoller(Service service) {
         this.service = service;
     }
-    @GetMapping("persons/{city}")
-    public List<Person> getPersonsByCity(@RequestParam ("city") String city) {
+
+    @GetMapping("persons/bycity{city}")
+    public List<Person> getPersonsByCity(@RequestParam("city") String city) {
         return service.getPersonByCity(city);
     }
 
