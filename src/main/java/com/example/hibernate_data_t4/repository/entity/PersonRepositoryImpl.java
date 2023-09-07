@@ -6,13 +6,17 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
+
 @Repository
 public class PersonRepositoryImpl implements PersonRepository {
     @PersistenceContext
     private EntityManager em;
 
+
+    @Transactional
     @Override
     public List<Person> getPersonByCity(String city) {
-        return em.createQuery("select p from Person p", Person.class).getResultList().stream().filter(person -> person.getCity().equals(city)).toList();
+        return em.createQuery("select p from Person p",Person.class).getResultStream().filter(person -> person.getCity().equals(city)).toList();
     }
 }

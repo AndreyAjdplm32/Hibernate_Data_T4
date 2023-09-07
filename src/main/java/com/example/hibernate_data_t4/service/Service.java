@@ -3,7 +3,6 @@ package com.example.hibernate_data_t4.service;
 import com.example.hibernate_data_t4.repository.entity.Person;
 import com.example.hibernate_data_t4.repository.entity.PersonRepositoryImpl;
 
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

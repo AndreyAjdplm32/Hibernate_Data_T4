@@ -1,6 +1,6 @@
 package com.example.hibernate_data_t4.repository.entity;
 
-import jakarta.annotation.sql.DataSourceDefinition;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
