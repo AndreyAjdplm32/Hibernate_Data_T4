@@ -1,5 +1,6 @@
-package com.example.hibernate_data_t4.entity;
+package com.example.hibernate_data_t4.repository.entity;
 
+import jakarta.annotation.sql.DataSourceDefinition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,23 +13,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Table(name = "person",schema = "hibernate")
-@IdClass(PersonId.class)
+@Table(name="PersonTable")
+
 
 public class Person {
 
-    @Id
-    @Column(nullable = false)
-    private String name;
-    @Id
-    @Column(nullable = false)
-    private String surname;
-    @Id
-    @Column(nullable = false)
-    private int age;
+
     @Column(nullable = false)
     private String phoneNumber;
     @Column(nullable = false)
     private String city;
+    @EmbeddedId
+    private PersonId personId;
 
 }
