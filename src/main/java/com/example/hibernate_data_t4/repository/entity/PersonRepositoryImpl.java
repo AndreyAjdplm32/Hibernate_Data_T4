@@ -17,7 +17,7 @@ public class PersonRepositoryImpl implements PersonRepository {
     @Transactional
     @Override
     public List<Person> getPersonByCity(String city) {
-        //return em.createQuery("select p from Person p where p.city =:id").setParameter("city",city).getResultList();
-        return em.createQuery("select p from Person p", Person.class).getResultStream().filter(person -> person.getCity().equals(city)).toList();
+       return em.createQuery("select p from Person p where p.city =:city").setParameter("city",city).getResultList();
+        //return em.createQuery("select p from Person p", Person.class).getResultStream().filter(person -> person.getCity().equals(city)).toList();
     }
 }
